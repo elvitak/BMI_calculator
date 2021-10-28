@@ -11,6 +11,6 @@
   },
   "scripts": {
     "start": "node serve.js",
-    "test:unit": "jest --passWithNoTests --rootDir=spec"
+    "test:unit": "jest --"
   }
 }
