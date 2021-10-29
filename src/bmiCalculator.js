@@ -10,7 +10,6 @@ class BMICalculator {
         return bmiResults;
     }
     getBMIClasification(value) {
-        //return "Normal";
         if (value < 18.5) {
             return "Underweight";
         } else if (value < 24.9) {
@@ -24,10 +23,21 @@ class BMICalculator {
         } else {
             return "Extreme Obesity Class 3"
         }
-        
     }
 }
 
+function onCalculateClick() {
+    const weight = document.getElementById("weight").value;
+    const height = document.getElementById("height").value;
+    const resultDiv = document.getElementById("results");
+    const calculator = new BMICalculator();
+    const result = calculator.calculateMetric({weight: weight, height: height});
+    resultDiv.innerHTML = `<h2>Your BMI value is <strong>${result.value}</strong> and you are in ${result.clasification} category! </h2>`;
+}
+
+const button = document.getElementById("calculateBtn");
+button.addEventListener("click", onCalculateClick);
+
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = BMICalculator
-  }
+}
