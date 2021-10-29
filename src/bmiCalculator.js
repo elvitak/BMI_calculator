@@ -32,7 +32,7 @@ function onCalculateClick() {
     const resultDiv = document.getElementById("results");
     const calculator = new BMICalculator();
     const result = calculator.calculateMetric({weight: weight, height: height});
-    resultDiv.innerHTML = `<h2>Your BMI value is <strong>${result.value}</strong> and you are in ${result.clasification} category! </h2>`;
+    resultDiv.innerHTML = `<h2>Your BMI value is <strong>${result.value}</strong> and you are in <strong>${result.clasification}</strong> category! </h2>`;
 }
 
 const button = document.getElementById("calculateBtn");
