@@ -3,7 +3,7 @@ describe('User fills out registration form ', () => {
         before(() => {
             cy.visit('http://localhost:3474');
             cy.contains('BMI Calculator');
-            cy.get("input[id=weight]").type("56");
+            cy.get("#weight").type("56");
             cy.get("#height").type("1.61");
             cy.get("#calculateBtn").click(); 
         });
