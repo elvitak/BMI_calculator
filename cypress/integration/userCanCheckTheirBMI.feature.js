@@ -35,4 +35,14 @@ describe('User fills out registration form ', () => {
             cy.get("#results").should("contain", "Please write positive values!");
 	    });
     });
+    describe('with empty', () => {
+        before(() => {
+            cy.visit('http://localhost:3474');
+            cy.contains('BMI Calculator');
+            cy.get("#calculateBtn").click(); 
+        });
+        it('is expected to see Error message', () => {
+            cy.get("#results").should("contain", "Please specify your weight and height!");
+	    });
+    });
 });

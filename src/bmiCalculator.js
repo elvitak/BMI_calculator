@@ -29,20 +29,17 @@ class BMICalculator {
 function onCalculateClick() {
     const weight = document.getElementById("weight").valueAsNumber;
     const height = document.getElementById("height").valueAsNumber;
-
-    // validate inputs...
-
     const resultDiv = document.getElementById("results");
-    const calculator = new BMICalculator();
-    const result = calculator.calculateMetric({weight: weight, height: height});
-    console.log(height);
-    console.log(typeof(height));
-    if (height === 0) {
+    if(isNaN(weight) || isNaN(height)) {
+        resultDiv.innerHTML = "<h2>Please specify your weight and height!</h2>"
+    } else if (height === 0) {
         resultDiv.innerHTML = "<h2>Are you really THAT short?</h2>";
     } else if (height < 0 || weight < 0) {
         resultDiv.innerHTML = "<h2>Please write positive values!</h2>"; 
     } else {
-       resultDiv.innerHTML = `<h2>Your BMI value is <strong>${result.value}</strong> and you are in <strong>${result.clasification}</strong> category! </h2>`; 
+        const calculator = new BMICalculator();
+        const result = calculator.calculateMetric({weight: weight, height: height});
+        resultDiv.innerHTML = `<h2>Your BMI value is <strong>${result.value}</strong> and you are in <strong>${result.clasification}</strong> category! </h2>`; 
     }
 }
 
