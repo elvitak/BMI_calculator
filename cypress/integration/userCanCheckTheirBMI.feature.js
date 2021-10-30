@@ -15,12 +15,24 @@ describe('User fills out registration form ', () => {
         before(() => {
             cy.visit('http://localhost:3474');
             cy.contains('BMI Calculator');
-            cy.get("input[id=weight]").type("56");
+            cy.get("#weight").type("56");
             cy.get("#height").type("0");
             cy.get("#calculateBtn").click(); 
         });
         it('is expected to see Error message', () => {
             cy.get("#results").should("contain", "Are you really THAT short?");
+	    });
+    });
+    describe('with negative values', () => {
+        before(() => {
+            cy.visit('http://localhost:3474');
+            cy.contains('BMI Calculator');
+            cy.get("#weight").type("-56");
+            cy.get("#height").type("1.61");
+            cy.get("#calculateBtn").click(); 
+        });
+        it('is expected to see Error message', () => {
+            cy.get("#results").should("contain", "Please write positive values!");
 	    });
     });
 });
