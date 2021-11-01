@@ -3,9 +3,10 @@ class BMICalculator {
     const weight = options.weight;
     const height = options.height;
     const bmiValue = (weight / (height * height)).toFixed(2);
+    const parsedBmiValue = parseFloat(bmiValue);
     const bmiResults = {
-      value: parseFloat(bmiValue),
-      clasification: this.getBMIClasification(parseFloat(bmiValue)),
+      value: parsedBmiValue,
+      clasification: this.getBMIClasification(parsedBmiValue),
     };
     return bmiResults;
   }
