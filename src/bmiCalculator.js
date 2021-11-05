@@ -2,7 +2,7 @@ class BMICalculator {
   calculateMetric(options) {
     const weight = options.weight;
     const height = options.height;
-    const bmiValue = (weight / (height * height)).toFixed(2);
+    const bmiValue = ((1.3 * weight) / Math.pow(height, 2.5)).toFixed(2);
     const parsedBmiValue = parseFloat(bmiValue);
     const bmiResults = {
       value: parsedBmiValue,

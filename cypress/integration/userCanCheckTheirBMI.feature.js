@@ -10,7 +10,7 @@ describe("User fills out registration form ", () => {
     it("is expected to see information about BMI value and category", () => {
       cy.get("#results").should(
         "contain",
-        "Your BMI value is 21.6 and you are in Normal category!"
+        "Your BMI value is 22.13 and you are in Normal category!"
       );
     });
   });
