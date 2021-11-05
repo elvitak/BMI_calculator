@@ -10,7 +10,7 @@ describe("BMICalculator", () => {
         results = subject.calculateMetric({ height: 1.61, weight: 56 });
       });
       it("is expected to return numeric value if given proper arguments", () => {
-        expect(results.value).toEqual(21.6);
+        expect(results.value).toEqual(22.13);
       });
 
       it('is expected to see category "normal" ', () => {
@@ -23,11 +23,11 @@ describe("BMICalculator", () => {
         results = subject.calculateMetric({ height: 1.86, weight: 105 });
       });
       it("is expected to return numeric value if given proper arguments", () => {
-        expect(results.value).toEqual(30.35);
+        expect(results.value).toEqual(28.93);
       });
 
-      it('is expected to see category "Obesity Class 1" ', () => {
-        expect(results.clasification).toEqual("Obesity Class 1");
+      it('is expected to see category "Overweight" ', () => {
+        expect(results.clasification).toEqual("Overweight");
       });
     });
     describe("Imaginary person with obesity", () => {
@@ -36,7 +36,7 @@ describe("BMICalculator", () => {
         results = subject.calculateMetric({ height: 1.65, weight: 130 });
       });
       it("is expected to return numeric value if given proper arguments", () => {
-        expect(results.value).toEqual(47.75);
+        expect(results.value).toEqual(48.33);
       });
 
       it('is expected to see category "Extreme Obesity Class 3" ', () => {
