@@ -1,7 +1,7 @@
 describe("User fills out registration form ", () => {
   describe("with correct information", () => {
     before(() => {
-      cy.visit("http://localhost:3474");
+      cy.visit("http://localhost:3001");
       cy.contains("BMI Calculator");
       cy.get("#weight").type("56");
       cy.get("#height").type("1.61");
@@ -16,7 +16,7 @@ describe("User fills out registration form ", () => {
   });
   describe("with height 0", () => {
     before(() => {
-      cy.visit("http://localhost:3474");
+      cy.visit("http://localhost:3001");
       cy.contains("BMI Calculator");
       cy.get("#weight").type("56");
       cy.get("#height").type("0");
@@ -28,7 +28,7 @@ describe("User fills out registration form ", () => {
   });
   describe("with negative values", () => {
     before(() => {
-      cy.visit("http://localhost:3474");
+      cy.visit("http://localhost:3001");
       cy.contains("BMI Calculator");
       cy.get("#weight").type("-56");
       cy.get("#height").type("1.61");
@@ -40,7 +40,7 @@ describe("User fills out registration form ", () => {
   });
   describe("with empty", () => {
     before(() => {
-      cy.visit("http://localhost:3474");
+      cy.visit("http://localhost:3001");
       cy.contains("BMI Calculator");
       cy.get("#calculateBtn").click();
     });
